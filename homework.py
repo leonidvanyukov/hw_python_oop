@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 LEN_STEP: float = 0.65
-M_IN_KM: float = 1000
+M_IN_KM: int = 1000
 MINUTES: float = 60
 
 
