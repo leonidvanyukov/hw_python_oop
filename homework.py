@@ -4,6 +4,7 @@ LEN_STEP: float = 0.65
 M_IN_KM: float = 1000
 MINUTES: float = 60
 
+
 @dataclass
 class InfoMessage:
     """Информационное сообщение о тренировке."""
@@ -72,6 +73,7 @@ class Running(Training):
                                  * (self.duration_h * MINUTES))
         return spent_calories
 
+
 @dataclass
 class SportsWalking(Training):
     """Тренировка: спортивная ходьба."""
@@ -89,6 +91,7 @@ class SportsWalking(Training):
                           * self.weight_kg)
                           * (self.duration_h * MINUTES))
         return spent_calories
+
 
 @dataclass
 class Swimming(Training):
