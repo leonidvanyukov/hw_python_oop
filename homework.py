@@ -16,13 +16,13 @@ class InfoMessage:
                'Потрачено ккал: {calories:.3f}.')
 
     def get_message(self) -> str:
-        return(self.MESSAGE.format(
+        return self.MESSAGE.format(
             training_type=self.training_type,
             duration=self.duration,
             distance=self.distance,
             speed=self.speed,
             calories=self.calories
-        ))
+        )
 
 
 @dataclass
@@ -134,7 +134,10 @@ def read_package(workout_type: str, data: list) -> Training:
         'RUN': Running,
         'WLK': SportsWalking
     }
-    return(workouts[workout_type](*data))
+    if workout_type in workouts:
+        return workouts[workout_type](*data)
+    else:
+        print("This type of workout doesn't exist")
 
 
 def main(training: Training) -> None:
